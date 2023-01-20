@@ -42,6 +42,9 @@ export default function Home() {
             {user ? (
               <div>
                 <p>ログインしています</p>
+                <button onClick={() => supabaseClient.auth.signOut()}>
+                  ログアウト
+                </button>
                 <pre>{JSON.stringify(user, null, 2)}</pre>
               </div>
             ) : (
