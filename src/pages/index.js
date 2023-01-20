@@ -23,24 +23,33 @@ export default function Home() {
     fetchTestData();
   }, []);
 
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <>
       <main>
         <div>
           <h2>Supabaseのtestテーブルに入っているテストデータを1つ取得</h2>
-          <p>{testData}</p>
+          <div style={{ margin: "16px 0 32px" }}>
+            <p>{testData}</p>
+          </div>
         </div>
         <div>
           <h2>SupabaseによるGoogleログイン</h2>
           <div>
             {user ? (
-              <></>
+              <div>
+                <p>ログインしています</p>
+                <p>{user}</p>
+              </div>
             ) : (
               <div>
                 <p>ログインしていません</p>
                 <div style={{ width: "400px", margin: "64px auto" }}>
                   <Auth
-                    redirectTo={process.env.NEXT_PUBLIC_SITE_URL}
+                    redirectTo={`${process.env.NEXT_PUBLIC_SITE_URL}`}
                     appearance={{ theme: ThemeSupa }}
                     supabaseClient={supabaseClient}
                     providers={["google"]}
