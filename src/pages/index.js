@@ -9,7 +9,7 @@ export default function Home() {
 
   const [testData, setTestData] = useState("");
 
-  // Supabaseのtestテーブルに入っているテストデータを1つ取得
+  // 【Supabase接続テスト】testテーブルに入っているテストデータを1つ取得
   async function fetchTestData() {
     let { data, error } = await supabase
       .from("test")
@@ -31,13 +31,15 @@ export default function Home() {
     <>
       <main>
         <div>
-          <h2>Supabaseのtestテーブルに入っているテストデータを1つ取得</h2>
+          <h2>
+            【Supabase接続テスト】testテーブルに入っているテストデータを1つ取得
+          </h2>
           <div style={{ margin: "16px 0 32px" }}>
             <p>{testData}</p>
           </div>
         </div>
         <div>
-          <h2>SupabaseによるGoogleログイン</h2>
+          <h2>【SupabaseによるGoogleログイン】</h2>
           <div>
             {user ? (
               <div>
