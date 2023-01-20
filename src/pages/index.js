@@ -23,10 +23,6 @@ export default function Home() {
     fetchTestData();
   }, []);
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
-
   return (
     <>
       <main>
@@ -54,7 +50,7 @@ export default function Home() {
                 <p>ログインしていません</p>
                 <div style={{ width: "400px", margin: "64px auto" }}>
                   <Auth
-                    redirectTo={`${process.env.NEXT_PUBLIC_SITE_URL}`}
+                    redirectTo={`${process.env.NEXT_PUBLIC_SITE_URL}user/`}
                     appearance={{ theme: ThemeSupa }}
                     supabaseClient={supabaseClient}
                     providers={["google"]}
