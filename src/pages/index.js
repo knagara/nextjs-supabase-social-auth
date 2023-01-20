@@ -42,7 +42,7 @@ export default function Home() {
             {user ? (
               <div>
                 <p>ログインしています</p>
-                <p>{user}</p>
+                <pre>{JSON.stringify(user, null, 2)}</pre>
               </div>
             ) : (
               <div>
